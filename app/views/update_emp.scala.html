@@ -1,0 +1,59 @@
+@(i: Int,fname:String, lname:String, age:String,salary:String, dept:String, location:String)
+
+
+@main("update_employee"){
+<div style="padding: 2cm; background-color:mistyrose;height:30cm">
+
+    <form method="POST" action="@routes.HR.update" style="border: solid 2px ;border-radius:15px;border-color:white; background-color:peachpuff ; padding:10px" class="needs-validation" >
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="staticEmai">Emp_id</label>
+                <input type="text" readonly class="form-control-plaintext" name="i" value="@i">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail">First name</label>
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@fname">
+
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail1">Last name</label>
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail1" value="@lname">
+
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationCustomUsername">Age</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" name="age" value="@age"  required>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationCustom03">Salary</label>
+                <input type="number" class="form-control" name="salary" value="@salary" required>
+                <div class="invalid-feedback">
+                    Please provide a salary.
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationCustom04">Department</label>
+                <input type="text" class="form-control" name="dept" value="@dept" required>
+                <div class="invalid-feedback">
+                    Please provide a department.
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationCustom05">Location</label>
+                <input type="text" class="form-control" name="location" value="@location" required>
+                <div class="invalid-feedback">
+                    Please provide a location.
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Update </button>
+
+    </form>
+</div>
+
+
+}

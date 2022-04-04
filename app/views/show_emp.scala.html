@@ -1,0 +1,57 @@
+@(fname:collection.mutable.ListBuffer[String],lname:collection.mutable.ListBuffer[String],
+age:collection.mutable.ListBuffer[String],
+salary:collection.mutable.ListBuffer[String],
+dept:collection.mutable.ListBuffer[String],
+location:collection.mutable.ListBuffer[String])(implicit flash:Flash)
+
+
+@main("Employee List"){
+<div style="padding: 1cm; background-color:mistyrose;height:30cm">
+    <form style="padding:0.5cm; float:right" action="@routes.HR.login">
+        <button class="btn btn-primary" type="submit">Log Out!</button>
+    </form>
+    <form style="padding:0.5cm; float:right" action="@routes.HR.add_employee">
+        <button class="btn btn-primary" type="submit">Add Employee</button>
+    </form>
+    <span style="color:red">@flash.get("msg")</span>
+    <span style="color:green">@flash.get("msg1")</span>
+<table class="table" style="border:solid 1px;border-color: white; background-color:lavender">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Department</th>
+        <th scope="col">Location</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    @for(i<- 0 to (fname.length)-1){
+    <tr>
+        <th style="border:solid 1px, border-color: white" scope="row">@(i+1)</th>
+        <td style="border:solid 1px;border-color: white">@fname(i)</td>
+        <td style="border:solid 1px;border-color: white">@lname(i)</td>
+        <td style="border:solid 1px;border-color: white">@age(i)</td>
+        <td style="border:solid 1px;border-color: white">@salary(i)</td>
+        <td style="border:solid 1px;border-color: white">@dept(i)</td>
+        <td style="border:solid 1px;border-color: white">@location(i)</td>
+        <td style="border:solid 1px;border-color: white">
+            <div style="border-">
+            <form method="post" action="@routes.HR.update_emp">
+                <button style="float:left" class="btn btn-primary" name="index" type="submit" value="@i">Update</button>
+            </form>
+            <form method="post" action="@routes.HR.delete">
+                <button style="margin-left:10px" class="btn btn-primary" name="index" type="submit" value="@i">Delete</button>
+            </form>
+            </div>
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>
+</div>
+
+}

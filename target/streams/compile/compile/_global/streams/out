@@ -1,0 +1,6 @@
+[0m[[0m[31merror[0m] [0m[0mC:\play-scala-seed\app\controllers\HR.scala:109:40: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : scala.collection.mutable.ListBuffer[String][0m
+[0m[[0m[31merror[0m] [0m[0m required: String[0m
+[0m[[0m[31merror[0m] [0m[0m            Ok(views.html.update_emp(i,fname, lname, age,salary, dept, location))[0m
+[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
